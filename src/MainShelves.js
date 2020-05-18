@@ -1,6 +1,5 @@
 import React from 'react';
 import Shelf from './Shelf';
-import BookShelfChanger from './BookShelfChanger';
 
 /**
  * Main: -> show Shelf(s)
@@ -12,6 +11,7 @@ function MainShelves(props) {
 		<div className="list-books-content">
               {shelfList.map((s) => (
               	<Shelf
+              		key={s.shelfId}
 	                shelfId={s.shelfId}
 	                shelfDisplayName={s.shelfDisplayName}
 	                shelvedBooks={shelvedBooks}

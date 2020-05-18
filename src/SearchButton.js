@@ -1,12 +1,17 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 /**
- * Search button
+ * Main: -> Search button
  */
 function SearchButton(props) {
+	/* TODO: clean up search state passing stuff */
+	const { changeSearchState } = props;
 	return (
 		<div className="open-search">
-			<button onClick={() => this.setState({ showSearchPage: true })}>Add a book</button>
+			<Link to="/search">
+				<button>Add a book</button>
+			</Link>
 		</div>
 	);
 }

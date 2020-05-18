@@ -6,7 +6,6 @@ import React from 'react';
  */
 function BookShelfChanger(props) {
 	const { curShelf, bookId, shelfChanger, shelfList } = props;
-	console.log(bookId, curShelf);
 
 	const handleChange = (e) => {
 		const newShelf = e.target.value;
