@@ -10,26 +10,14 @@ function MainShelves(props) {
 
 	return (
 		<div className="list-books-content">
-              <div>
-                <Shelf
-	                shelfId="currentlyReading"
-	                shelfDisplayName="Currently Reading"
+              {shelfList.map((s) => (
+              	<Shelf
+	                shelfId={s.shelfId}
+	                shelfDisplayName={s.shelfDisplayName}
 	                shelvedBooks={shelvedBooks}
 	                shelfChanger={shelfChanger}
 	                shelfList={shelfList} />
-                <Shelf
-	                shelfId="wantToRead"
-	                shelfDisplayName="Want to Read"
-	                shelvedBooks={shelvedBooks}
-	                shelfChanger={shelfChanger}
-	                shelfList={shelfList} />
-                <Shelf
-	                shelfId="read"
-	                shelfDisplayName="Read"
-	                shelvedBooks={shelvedBooks}
-	                shelfChanger={shelfChanger}
-	                shelfList={shelfList} />
-              </div>
+              	))}
             </div>
 	);
 }
