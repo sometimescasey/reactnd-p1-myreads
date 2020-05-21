@@ -35,15 +35,19 @@ class Search extends Component {
 		this.setState(() => (
 		  		{ query: typed } ));
 
-		if (!this.debouncedFn) {
-			this.debouncedFn = _.debounce(() => {
-		  	// querying is expensive, wait 300ms
-		  	this.doSearch();
-			}, 300);
-		}
+		if (typed.length === 0) {
+			this.clearResults();
+		} else {
+			if (!this.debouncedFn) {
+				this.debouncedFn = _.debounce(() => {
+			  	// querying is expensive, debounce it
+			  	this.doSearch();
+				}, 200);
+			}
 
-		this.debouncedFn();
-		debugQuerying && console.log(this.state.query);
+			this.debouncedFn();
+			debugQuerying && console.log(this.state.query);
+		}
 	};
 
 	clearResults = () => {
@@ -87,8 +91,6 @@ class Search extends Component {
 				<div className="search-books">
 	            <SearchBar
 	            	onChangeHandler={this.handleQueryChange}
-	            	// equivalent:
-	            	// onChangeHandler={(e) => {this.handleQueryChange(e)}}
 	            	value={query}/>
 	            <div className="search-books-results">
 	              <BooksGrid
@@ -96,7 +98,6 @@ class Search extends Component {
                   	shelfChanger={shelfChanger}
                   	bookAdder={bookAdder}
                   	shelfList={shelfList}
-                  	// searchResultsCallBack={() => {this.handleBookAdd()}}
                   	searchResultsCallBack={this.handleBookAdd}
                   	/>
 	            </div>
