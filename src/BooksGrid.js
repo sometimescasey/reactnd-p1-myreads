@@ -4,26 +4,29 @@ import Book from './Book';
 
 /**
  * Shelf: -> Show grid of Books
+ * Search: -> Show grid of Books
  */
 function BooksGrid(props) {
-	const { filteredBooks, shelfChanger, shelfList } = props;
-	/* TODO:  to props
-	* props: add filtered book list
-	*/
+	const { filteredBookList, shelfChanger, bookAdder, shelfList, searchResultsCallBack } = props;
+
 	let booksGrid = (
       <div className="bookshelf-books">
         <ol className="books-grid">
-        	{ filteredBooks.map((b) => (
+        	{ filteredBookList.map((b) => (
         		<Book
-        			key={b.title}
+        			key={b.id}
         			title={b.title}
+                    bookId={b.id}
         			authors={b.authors}
         			coverURL={b.coverURL}
         			curShelf={b.shelf}
         			shelfChanger={shelfChanger}
+                    bookAdder={bookAdder}
         			shelfList={shelfList}
+                    searchResultsCallBack={searchResultsCallBack}
         			/>
-        		)) }
+        		)
+            ) }
         </ol>
       </div>
 	);

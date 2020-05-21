@@ -4,9 +4,7 @@ import { Link } from 'react-router-dom';
 /**
  * Main: -> Search button
  */
-function SearchButton(props) {
-	/* TODO: clean up search state passing stuff */
-	const { changeSearchState } = props;
+function MainSearchButton(props) {
 	return (
 		<div className="open-search">
 			<Link to="/search">
@@ -16,5 +14,5 @@ function SearchButton(props) {
 	);
 }
 
-export default SearchButton;
+export default MainSearchButton;
 

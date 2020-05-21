@@ -5,9 +5,37 @@ import BookShelfChanger from './BookShelfChanger';
  * BooksGrid: -> A single Book
  */
 function Book(props) {
-	const { coverURL, title, authors, curShelf, shelfChanger, shelfList } = props;
+  const formatAuthors = (authors) => {
+    if (!authors) {
+      return "(Author Unknown)";
+    }
+    if (authors.length < 2) {
+      return authors;
+    } else {
+      let authorString = authors[0];
+      for (let i = 1; i < authors.length; i++) {
+        authorString += `, ${authors[i]}`
+      }
+      return authorString;
+    }
 
-	let book = (
+  };
+
+	const {
+    title,
+    bookId,
+    authors,
+    coverURL,
+    curShelf,
+    shelfChanger,
+    bookAdder,
+    shelfList,
+    searchResultsCallBack,
+  } = props;
+
+	let dropdownHandler = (curShelf === 'none') ? bookAdder : shelfChanger;
+
+  let book = (
 		<li>
             <div className="book">
               <div className="book-top">
@@ -17,12 +45,17 @@ function Book(props) {
                 		backgroundImage: coverURL }}></div>
                 	<BookShelfChanger
                 		curShelf={curShelf}
-                		bookId={title}
-                		shelfChanger={shelfChanger}
-                		shelfList={shelfList} />
+                		bookObj={{
+                      id: bookId,
+                      title: title,
+                      authors: authors,
+                      coverURL: coverURL }}
+                		dropdownHandler={dropdownHandler}
+                		shelfList={shelfList}
+                    searchResultsCallBack={searchResultsCallBack} />
               </div>
               <div className="book-title">{title}</div>
-              <div className="book-authors">{authors}</div>
+              <div className="book-authors">{formatAuthors(authors)}</div>
             </div>
          </li>
 	);

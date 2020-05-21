@@ -14,9 +14,13 @@ function Shelf(props) {
 	const { shelfId, shelfDisplayName, shelvedBooks, shelfChanger, shelfList } = props;
 
 	const filterForShelf = (shelvedBooks) => {
-		const filtered = shelvedBooks.filter(
-				(b) => b.shelf === shelfId
-			);
+		const filtered = [];
+		for (const bookId in shelvedBooks) {
+			if (shelvedBooks[bookId].shelf === shelfId) {
+				filtered.push(shelvedBooks[bookId]);
+			}
+
+		}
 		return filtered;
 	};
 
@@ -24,7 +28,7 @@ function Shelf(props) {
 		<div className="bookshelf">
                   <h2 className="bookshelf-title">{shelfDisplayName}</h2>
                   <BooksGrid
-                  	filteredBooks={filterForShelf(shelvedBooks)}
+                  	filteredBookList={filterForShelf(shelvedBooks)}
                   	shelfChanger={shelfChanger}
                   	shelfList={shelfList} />
         </div>

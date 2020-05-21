@@ -2,14 +2,20 @@ import React from 'react';
 
 /**
  * Book: -> Dropdown for changing the Shelf that a Book belongs to.
- TODO: needs to take a callback that alters state all the way up at App level
  */
 function BookShelfChanger(props) {
-	const { curShelf, bookId, shelfChanger, shelfList } = props;
+	const { curShelf,
+			bookObj,
+			dropdownHandler,
+			shelfList,
+			searchResultsCallBack } = props;
 
 	const handleChange = (e) => {
 		const newShelf = e.target.value;
-		shelfChanger(bookId, newShelf);
+		dropdownHandler(bookObj, newShelf);
+		if ( searchResultsCallBack ) {
+			searchResultsCallBack();
+		}
 	};
 
 	let changer = (
