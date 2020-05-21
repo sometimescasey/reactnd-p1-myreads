@@ -41,6 +41,7 @@ class Search extends Component {
 			if (!this.debouncedFn) {
 				this.debouncedFn = _.debounce(() => {
 			  	// querying is expensive, debounce it
+			  	// based on https://medium.com/@anuhosad/debouncing-events-with-react-b8c405c33273
 			  	this.doSearch();
 				}, 200);
 			}
