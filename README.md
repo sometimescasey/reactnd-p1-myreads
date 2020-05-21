@@ -4,16 +4,17 @@ This is the completed version of the MyReads App, built from the reactnd-project
 
 ## Instructions
 
-To get started developing right away:
+To start the app:
 
 * install all project dependencies with `npm install`
 * start the development server with `npm start`
 
 ## Additional Packages
 
-The following package has been added to package.json to enable debouncing of search results:
+The following packages have added to package.json:
 
 * `"lodash.debounce": "4.0.8"`
+* `"react-router-dom": "^5.2.0"`
 
 ## Contents
 ```bash
@@ -28,7 +29,18 @@ The following package has been added to package.json to enable debouncing of sea
     ├── App.css # Styles for your app. Feel free to customize this as you desire.
     ├── App.js # This is the root of your app.
     ├── App.test.js # Used for testing. Provided with Create React App. Testing is encouraged, but not required.
+    ├── Book.js # Book component (single book)
     ├── BooksAPI.js # A JavaScript API for the provided Udacity backend. Instructions for the methods are below.
+    ├── BooksGrid.js # Component for the grid of books displayed in a shelf or on search page
+    ├── BookShelfChanger.js # Component for the dropdown used to change a Book's shelf or add a Book from the search page
+    ├── Main.js # Component for the Main view with default shelves, at app open
+    ├── MainHeader.js: # Component for the header on Main
+    ├── MainSearchButton.js: # Component for the search button on the Main view
+    ├── MainShelves.js: # Component to wrap the three main shelves on the Main view
+    ├── parsebook.js: # Contains two helper functions to parse results from BooksAPI.getAll() and BooksAPI.search()
+    ├── Search.js: # Component for the Search view
+    ├── SearchBar.js: # Component for the Search bar
+    ├── Shelf.js: # Component for a Shelf
     ├── icons # Helpful images for your app. Use at your discretion.
     │   ├── add.svg
     │   ├── arrow-back.svg
@@ -36,5 +48,3 @@ The following package has been added to package.json to enable debouncing of sea
     ├── index.css # Global styles. You probably won't need to change anything here.
     └── index.js # This has been modified to use <BrowserRouter> from react-router-dom
 ```
-
-Remember that good React design practice is to create new JS files for each component and use import/require statements to include them where they are needed.
