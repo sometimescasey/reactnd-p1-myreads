@@ -44,7 +44,6 @@ class BooksApp extends Component {
   /* if book not on shelf (i.e. new search result),
    * render its BookShelfChanger dropdownHandler with this */
   addToShelf = (bookObjToAdd, newShelf) => {
-    console.log("addToShelf called,", bookObjToAdd, newShelf);
     const makeUpdatedState = (cs) => {
       let updatedShelvedBooks = this.state.shelvedBooks;
       updatedShelvedBooks[bookObjToAdd.id] =
