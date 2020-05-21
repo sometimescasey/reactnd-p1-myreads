@@ -9,6 +9,7 @@ function Book(props) {
     if (!authors) {
       return "(Author Unknown)";
     }
+
     if (authors.length < 2) {
       return authors;
     } else {
@@ -19,6 +20,20 @@ function Book(props) {
       return authorString;
     }
 
+  };
+
+  const mockThumbnail = (coverURL) => {
+    if (!coverURL) { coverURL = "linear-gradient(#555, #eee)"; }
+
+    return (
+        <div
+        className="book-cover"
+        style={{
+          width: 128,
+          height: 193,
+          backgroundImage: coverURL }}>
+        </div>
+        );
   };
 
 	const {
@@ -39,10 +54,7 @@ function Book(props) {
 		<li>
             <div className="book">
               <div className="book-top">
-                <div
-                	className="book-cover"
-                	style={{ width: 128, height: 193,
-                		backgroundImage: coverURL }}></div>
+                {mockThumbnail(coverURL)}
                 	<BookShelfChanger
                 		curShelf={curShelf}
                 		bookObj={{

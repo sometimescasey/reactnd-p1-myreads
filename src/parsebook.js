@@ -7,7 +7,12 @@ function parseBook(b) {
   	pB.id = b.id;
   	pB.title = b.title;
   	pB.authors = b.authors;
-  	pB.coverURL = `url(${b.imageLinks.thumbnail})`;
+    if (b.imageLinks && b.imageLinks.thumbnail) {
+      pB.coverURL = `url(${b.imageLinks.thumbnail})`;
+    } else {
+      pB.coverURL = null;
+    }
+
 
   	// BooksAPI getALl() result returns a 'shelf' key
   	pB.shelf = b.shelf;
