@@ -2,6 +2,16 @@
 
 This is the completed version of the MyReads App, built from the reactnd-project-myreads-starter repo.
 
+It is a simple GoodReads clone, which allows you to:
+
+* Search for books from a limited database
+* Save books to a "Currently Reading", "Want to Read", or "Read" shelf
+* Display books (covers, titles, and authors), organized by shelf
+
+It is practice for the following React concepts:
+* Creating basic views (function and class components)
+* Managing React component state
+
 ## Instructions
 
 To start the app:
