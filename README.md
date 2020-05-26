@@ -10,6 +10,7 @@ It is a simple GoodReads clone, which allows you to:
 It is practice for the following React concepts:
 * Creating basic views (function and class components)
 * Managing React component state
+* Simple use of `react-router`
 
 It was forked from [reactnd-project-myreads-starter](https://github.com/udacity/reactnd-project-myreads-starter).
 
