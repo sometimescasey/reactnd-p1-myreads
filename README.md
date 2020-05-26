@@ -2,17 +2,18 @@
 
 This is the project from the first part of the Udacity React Nanodegree, **"2. React Fundamentals"**.
 
-It is a simple GoodReads clone, which allows you to:
+Description:
+* Simple GoodReads clone
 * Search for books from a limited database
 * Save books to a "Currently Reading", "Want to Read", or "Read" shelf
 * Display books (covers, titles, and authors), organized by shelf
 
-It is practice for the following React concepts:
+Practice for:
 * Creating basic views (function and class components)
 * Managing React component state
 * Simple use of `react-router`
 
-It was forked from [reactnd-project-myreads-starter](https://github.com/udacity/reactnd-project-myreads-starter).
+Forked from [reactnd-project-myreads-starter](https://github.com/udacity/reactnd-project-myreads-starter).
 
 ## Instructions
 
